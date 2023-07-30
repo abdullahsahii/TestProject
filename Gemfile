@@ -12,7 +12,7 @@ gem 'httparty'
 gem 'will_paginate', '~> 4.0'
 gem 'devise'
 gem 'pry'
-gem 'bootstrap'
+gem 'bootstrap', '~> 5.2', '>= 5.2.3'
 # Use Puma as the app server
 gem 'puma', '~> 5.0'
 # Use SCSS for stylesheets
