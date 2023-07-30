@@ -1,0 +1,16 @@
+<%= @response %>
+
+<ul>
+  <% @characters.each do |character| %>
+    <li>
+      <strong><%= character.name %></strong>
+    </li>
+    <li>
+      <p>
+        <%= character.species %>
+      </p>
+
+    </li>
+  <% end %>
+</ul>
+<%= will_paginate @characters %>
