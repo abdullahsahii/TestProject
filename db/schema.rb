@@ -10,7 +10,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_07_26_100020) do
+ActiveRecord::Schema.define(version: 2023_07_29_191720) do
+
+  create_table "characters", force: :cascade do |t|
+    t.string "name"
+    t.boolean "status"
+    t.string "species"
+    t.string "type"
+    t.string "gender"
+    t.string "origin_name"
+    t.string "origin_url"
+    t.string "location_name"
+    t.string "location_url"
+    t.string "image"
+    t.string "created"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false

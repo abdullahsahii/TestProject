@@ -8,6 +8,8 @@ gem 'rails', '~> 6.1.7', '>= 6.1.7.4'
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3', '~> 1.4'
 gem 'sidekiq'
+gem 'httparty'
+gem 'will_paginate', '~> 4.0'
 gem 'devise'
 gem 'pry'
 gem 'bootstrap'
