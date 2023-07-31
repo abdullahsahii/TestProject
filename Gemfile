@@ -13,6 +13,7 @@ gem 'activeadmin'
 # gem 'will_paginate', '~> 4.0'
 gem 'kaminari', '~> 1.2', '>= 1.2.2'
 gem 'devise'
+gem 'cancancan', '~> 3.5'
 gem 'pry'
 gem 'bootstrap', '~> 5.2', '>= 5.2.3'
 # Use Puma as the app server
