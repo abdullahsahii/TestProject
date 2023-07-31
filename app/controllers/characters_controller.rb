@@ -12,9 +12,9 @@ class CharactersController < ApplicationController
     # end
     #
     @response = GetApiData.get_data(current_user)
-    page_number = params[:page_number]
-    @characters = Character.paginate(page: page_number, per_page: 10)
-
+    # page_number = params[:page_number]
+    # @characters = Character.paginate(page: page_number, per_page: 10)
+    @characters = Character.all.page(params[:page])
 
 
   end
