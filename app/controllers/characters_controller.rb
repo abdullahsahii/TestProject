@@ -15,8 +15,10 @@ class CharactersController < ApplicationController
     # page_number = params[:page_number]
     # @characters = Character.paginate(page: page_number, per_page: 10)
     @characters = Character.all.page(params[:page])
-
-
+  end
+  def show
+    @character = Character.find(params[:id])
+    puts @character.inspect
   end
 
   # private
