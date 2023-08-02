@@ -11,7 +11,7 @@ gem 'sidekiq'
 gem 'httparty'
 gem 'activeadmin'
 # gem 'will_paginate', '~> 4.0'
-gem 'kaminari', '~> 1.2', '>= 1.2.2'
+gem 'kaminari'
 gem 'devise'
 gem 'cancancan', '~> 3.5'
 gem 'pry'
@@ -27,7 +27,8 @@ gem 'turbolinks', '~> 5'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.7'
 # Use Redis adapter to run Action Cable in production
-# gem 'redis', '~> 4.0'
+gem 'redis', '~> 4.0'
+gem 'sidekiq-scheduler'
 # Use Active Model has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
