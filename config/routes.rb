@@ -4,12 +4,15 @@ Rails.application.routes.draw do
 
   root "characters#index"
   resources :characters do
-    resources :comments
+    resources :user_comments
+    resources :rating
   end
 
   devise_for :users, controllers: {
-    registrations: 'users/registrations', # Custom registrations controller
-    sessions: 'users/sessions'
+    registrations: 'users/registrations',
+    sessions: 'users/sessions',
+    confirmations: 'users/confirmations'
+
   }
 
 end

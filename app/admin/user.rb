@@ -11,6 +11,7 @@ ActiveAdmin.register User do
     column :first_name
     column :last_name
     column :age
+    column :user_id
     actions
   end
 
