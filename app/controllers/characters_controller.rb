@@ -1,30 +1,57 @@
 require 'httparty'
-
 class CharactersController < ApplicationController
-  before_action :authenticate_user!, only: [:index]
-
+  before_action :set_character, only: [:show]
+  before_action :require_admin, only: [:new, :create, :edit, :update, :destroy]
   def index
-    # response = HTTParty.get('https://rickandmortyapi.com/api/character')
-    # characters_data = JSON.parse(response.body)
-
-    # characters_data["results"].each do |character_data|
-    #   current_user.characters.create(name: character_data["name"], species: character_data["species"], status: character_data["status"], gender: character_data["gender"], origin_url: character_data["origin"]["url"], origin_name: character_data["origin"]["name"], location_name: character_data["location"]["name"], location_url: character_data["location"]["url"], image: character_data["image"], created: character_data["created"])
-    # end
-    #
-    @response = GetApiData.get_data(current_user)
-    # page_number = params[:page_number]
-    # @characters = Character.paginate(page: page_number, per_page: 10)
+    GetApiData.get_data(current_user)
     @characters = Character.all.page(params[:page])
   end
   def show
-    @character = Character.find(params[:id])
-    puts @character.inspect
   end
 
-  # private
-  #
-  # def api_params
-  #   params.require(:api).permit(:name, :status, :species, :type, :gender, :origin_name, :origin_url, :location_name, :location_url, :image, :created)
-  # end
+  def new
+    @character = Character.new
+  end
 
+  def create
+    @character = Character.new(character_params)
+    if @character.save
+      redirect_to root_path
+    else
+      render :new
+    end
+  end
+
+  def edit
+  end
+
+  def update
+    if @character.update(character_params)
+      redirect_to @character
+    else
+      render :edit
+    end
+  end
+
+  def destroy
+    @character.destroy
+    redirect_to root_path
+  end
+
+  private
+
+  def set_character
+    @character = Character.find(params[:id])
+  end
+
+  def character_params
+    params.require(:character).permit(:name, :status, :species, :type, :gender, :origin_name, :origin_url, :location_name, :location_url, :image, :created)
+  end
+
+  def require_admin
+    unless current_user&.admin?
+      flash[:alert] = 'You do not have permission to perform this action.'
+      redirect_to root_path
+    end
+  end
 end

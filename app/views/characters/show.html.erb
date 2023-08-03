@@ -1,5 +1,4 @@
-
-<div class="container mt-4">
+<div class="container">
   <div class="row">
     <div class="col-md-6">
       <h1><%= @character.name %></h1>
@@ -14,32 +13,44 @@
       <p><strong>Created:</strong> <%= @character.created %></p>
 
       <h2>Comments</h2>
-      <% @character.comments.each do |comment| %>
-        <p>
-          <strong>Person Name:</strong>
-          <%= comment.person_name %>
-        </p>
+      <div class="comments">
+        <% @character.user_comments.each do |comment| %>
+          <div class="comment mb-4 p-3 border rounded">
+            <p>
+              <strong>Person Name:</strong>
+              <%= comment.person_name %>
+            </p>
 
-        <p>
-          <strong>Comment:</strong>
-          <%= comment.comment %>
-        </p>
-      <% end %>
+            <p>
+              <strong>Comment:</strong>
+              <%= comment.comment %>
+            </p>
+            <% if current_user && comment.user == current_user %>
+              <%= link_to 'Destroy', character_user_comment_path(@character, comment), method: :delete, data: { confirm: 'Are you sure you want to delete this comment?' }, class: 'btn btn-outline-danger btn-sm rounded-pill' %>
+            <% end %>
+          </div>
+        <% end %>
+      </div>
+
       <h2>Add a comment:</h2>
-      <%= form_with model: [ @character, @character.comments.build ] do |form| %>
+      <%= form_with(model: [@character, UserComment.new]) do |form| %>
         <div class="mb-3">
           <%= form.label :person_name, class: "form-label" %>
           <%= form.text_field :person_name, class: "form-control" %>
         </div>
         <div class="mb-3">
+          <%= form.label :rating, class: "form-label" %>
+          <%= form.text_field :rating, class: "form-control" %>
+        </div>
+        <div class="mb-3">
           <%= form.label :comment, class: "form-label" %>
           <%= form.text_area :comment, class: "form-control" %>
         </div>
+
         <%= form.submit "Add Comment", class: "btn btn-primary" %>
       <% end %>
     </div>
     <div class="col-md-6">
-      <!-- Display the character image -->
       <% if @character.image.present? %>
         <img src="<%= @character.image %>" alt="<%= @character.name %>" class="img-fluid rounded">
       <% else %>

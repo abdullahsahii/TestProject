@@ -10,21 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_08_01_074239) do
-
-  create_table "active_admin_comments", force: :cascade do |t|
-    t.string "namespace"
-    t.text "body"
-    t.string "resource_type"
-    t.integer "resource_id"
-    t.string "author_type"
-    t.integer "author_id"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["author_type", "author_id"], name: "index_active_admin_comments_on_author"
-    t.index ["namespace"], name: "index_active_admin_comments_on_namespace"
-    t.index ["resource_type", "resource_id"], name: "index_active_admin_comments_on_resource"
-  end
+ActiveRecord::Schema.define(version: 2023_08_03_120515) do
 
   create_table "characters", force: :cascade do |t|
     t.string "name"
@@ -44,13 +30,16 @@ ActiveRecord::Schema.define(version: 2023_08_01_074239) do
     t.index ["user_id"], name: "index_characters_on_user_id"
   end
 
-  create_table "comments", force: :cascade do |t|
+  create_table "user_comments", force: :cascade do |t|
     t.text "comment"
     t.string "person_name"
+    t.integer "character_id", null: false
+    t.integer "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.integer "character_id", null: false
-    t.index ["character_id"], name: "index_comments_on_character_id"
+    t.integer "rating"
+    t.index ["character_id"], name: "index_user_comments_on_character_id"
+    t.index ["user_id"], name: "index_user_comments_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -73,5 +62,6 @@ ActiveRecord::Schema.define(version: 2023_08_01_074239) do
   end
 
   add_foreign_key "characters", "users"
-  add_foreign_key "comments", "characters"
+  add_foreign_key "user_comments", "characters"
+  add_foreign_key "user_comments", "users"
 end
