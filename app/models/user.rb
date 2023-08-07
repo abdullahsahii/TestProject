@@ -2,7 +2,6 @@ class User < ApplicationRecord
   enum role: { user: 0, admin: 1 }
   has_many :characters
   has_many :user_comments
-  has_one :rating
   def self.ransackable_attributes(auth_object = nil)
     ["age", "confirmation_sent_at", "confirmation_token", "confirmed_at", "created_at", "email", "encrypted_password", "id", "name", "remember_created_at", "reset_password_sent_at", "reset_password_token", "role", "unconfirmed_email", "updated_at"]
   end

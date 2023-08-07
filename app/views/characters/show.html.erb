@@ -32,23 +32,9 @@
         <% end %>
       </div>
 
-      <h2>Add a comment:</h2>
-      <%= form_with(model: [@character, UserComment.new]) do |form| %>
-        <div class="mb-3">
-          <%= form.label :person_name, class: "form-label" %>
-          <%= form.text_field :person_name, class: "form-control" %>
-        </div>
-        <div class="mb-3">
-          <%= form.label :rating, class: "form-label" %>
-          <%= form.text_field :rating, class: "form-control" %>
-        </div>
-        <div class="mb-3">
-          <%= form.label :comment, class: "form-label" %>
-          <%= form.text_area :comment, class: "form-control" %>
-        </div>
+      <%= link_to 'Add Comment', new_character_user_comment_path(@character) %>
 
-        <%= form.submit "Add Comment", class: "btn btn-primary" %>
-      <% end %>
+
     </div>
     <div class="col-md-6">
       <% if @character.image.present? %>

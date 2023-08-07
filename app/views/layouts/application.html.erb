@@ -16,15 +16,18 @@
 
 
 
-  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <nav class="navbar navbar-expand-lg navbar-light bg-primary">
     <div class="container">
       <%= link_to "All Content", root_path, class: "navbar-brand" %>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ml-auto"> <!-- Move the buttons to the right -->
+        <ul class="navbar-nav ml-auto">
           <% if user_signed_in? %>
+            <li>
+              <%= link_to "Add New Character", new_admin_character_path, class: "nav-link" %>
+            </li>
             <li class="nav-item">
               <%= link_to "Sign Out", destroy_user_session_path, method: :delete, class: "nav-link" %>
             </li>
@@ -38,8 +41,14 @@
           <% end %>
         </ul>
       </div>
+      <form class="form-inline my-2 my-lg-0 d-flex" action="<%= search_characters_path %>" method="get">
+        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" name="q">
+        <button class="btn btn-outline-light my-2 my-sm-0" type="submit">Search</button>
+      </form>
+
     </div>
   </nav>
+
   <div style="background-color: #f5f5f5;">
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>

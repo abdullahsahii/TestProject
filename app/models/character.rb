@@ -8,5 +8,4 @@ class Character < ApplicationRecord
 
   belongs_to :user
   has_many :user_comments
-  has_one :rating
 end

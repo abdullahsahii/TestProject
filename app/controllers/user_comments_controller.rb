@@ -1,10 +1,14 @@
 class UserCommentsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create]
 
+  def new
+    @character = Character.find(params[:character_id])
+    @comment = @character.user_comments.build
+  end
 
   def create
     @character = Character.find(params[:character_id])
-    @comment = @character.user_comments.build(comment_params)
+    @comment = @character.user_comments.build(comment_params) # learn this build method
     @comment.user = current_user
 
     if @comment.save
@@ -15,12 +19,20 @@ class UserCommentsController < ApplicationController
   end
 
   def edit
-    @character = Character.find(params[:id])
-    @comment = Character.comment.find(params[:id])
+    @character = Character.find(params[:character_id])
+    @comment = @character.user_comments.find(params[:id])
   end
 
   def update
-
+    @character = Character.find(params[:id])
+    @comment = Usercomment.find(params[:id])
+    if @comment.user == current_user
+      if @comment.save
+        redirect_to character_path(@character), notice: 'Comment was successfully created.'
+      else
+        render :edit
+      end
+    end
   end
 
   def destroy
