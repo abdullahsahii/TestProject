@@ -1,0 +1,10 @@
+
+<h2>Contact Us</h2>
+<%= form_with(model: @contact, url: contacts_path, method: :post) do |form| %>
+  <div class="mb-3">
+    <%= form.label :question, class: "form-label" %>
+    <%= form.text_area :question, class: "form-control" %>
+  </div>
+
+  <%= form.submit "Submit Question", class: "btn btn-primary" %>
+<% end %>

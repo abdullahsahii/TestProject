@@ -1,0 +1,11 @@
+<h1>Search Results for "<%= @query %>"</h1>
+
+<% if @characters.any? %>
+  <ul>
+    <% @characters.each do |character| %>
+      <li><%= link_to character.name, character_path(character) %></li>
+    <% end %>
+  </ul>
+<% else %>
+  <p>No results found.</p>
+<% end %>

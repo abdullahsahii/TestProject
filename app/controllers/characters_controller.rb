@@ -1,11 +1,17 @@
 require 'httparty'
+
 class CharactersController < ApplicationController
   before_action :set_character, only: [:show]
   before_action :require_admin, only: [:new, :create, :edit, :update, :destroy]
+
   def index
-    GetApiData.get_data(current_user)
-    @characters = Character.all.page(params[:page])
+    if user_signed_in?
+      @characters = Character.where(user_id: current_user.id).page(params[:page])
+    else
+      @characters = Character.page(params[:page])
+    end
   end
+
   def show
   end
 
@@ -36,6 +42,11 @@ class CharactersController < ApplicationController
   def destroy
     @character.destroy
     redirect_to root_path
+  end
+
+  def search
+    @query = params[:q]
+    @characters = Character.where('name LIKE ?', "%#{@query}%")
   end
 
   private

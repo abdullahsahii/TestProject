@@ -1,0 +1,27 @@
+<%= form_with(model: [@character, @comment]) do |form| %>
+  <p><strong>Current User:</strong> <%= current_user.name %></p>
+  <%= form.hidden_field :person_name, value: current_user.name %>
+
+  <%= form.radio_button :rating, 5, id: 'rating_best' %>
+  <label class="star" for="rating_best">Best</label>
+
+  <%= form.radio_button :rating, 4, id: 'rating_better' %>
+  <label class="star" for="rating_better">Better</label>
+
+  <%= form.radio_button :rating, 3, id: 'rating_good' %>
+  <label class="star" for="rating_good">Good</label>
+
+  <%= form.radio_button :rating, 2, id: 'rating_bad' %>
+  <label class="star" for="rating_bad">Bad</label>
+
+  <%= form.radio_button :rating, 1, id: 'rating_worse' %>
+  <label class="star" for="rating_worse">Worse</label>
+
+
+  <div class="mb-3">
+    <%= form.label :comment, class: "form-label" %>
+    <%= form.text_area :comment, class: "form-control" %>
+  </div>
+
+  <%= form.submit "Add Comment", class: "btn btn-primary" %>
+<% end %>
