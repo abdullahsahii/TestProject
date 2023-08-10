@@ -1,4 +1,4 @@
-ActiveAdmin.register UserComment do
+ActiveAdmin.register UserComment, type: :admin do
   permit_params :person_name, :comment, :user_id, :character_id, :rating
   form do |f|
     f.inputs do

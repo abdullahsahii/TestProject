@@ -1,3 +1,4 @@
+require 'httparty'
 class GetApiData
   def self.get_data(arge)
     response = HTTParty.get('https://rickandmortyapi.com/api/character')

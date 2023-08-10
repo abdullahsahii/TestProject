@@ -1,0 +1,715 @@
+{
+  "RSpec": {
+    "coverage": {
+      "/home/abdullah/Desktop/TestProject/lib/role_constraint.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          null,
+          null,
+          1,
+          0,
+          0,
+          null,
+          null
+        ]
+      },
+      "/home/abdullah/Desktop/TestProject/app/controllers/application_controller.rb": {
+        "lines": [
+          1,
+          1,
+          null,
+          1,
+          null,
+          1,
+          null,
+          0,
+          0,
+          null,
+          null
+        ]
+      },
+      "/home/abdullah/Desktop/TestProject/app/helpers/application_helper.rb": {
+        "lines": [
+          1,
+          null
+        ]
+      },
+      "/home/abdullah/Desktop/TestProject/app/helpers/characters_helper.rb": {
+        "lines": [
+          1,
+          null
+        ]
+      },
+      "/home/abdullah/Desktop/TestProject/app/helpers/contact_helper.rb": {
+        "lines": [
+          1,
+          null
+        ]
+      },
+      "/home/abdullah/Desktop/TestProject/app/helpers/contacts_helper.rb": {
+        "lines": [
+          1,
+          null
+        ]
+      },
+      "/home/abdullah/Desktop/TestProject/app/helpers/homes_helper.rb": {
+        "lines": [
+          1,
+          null
+        ]
+      },
+      "/home/abdullah/Desktop/TestProject/app/helpers/user_comments_helper.rb": {
+        "lines": [
+          1,
+          null
+        ]
+      },
+      "/home/abdullah/Desktop/TestProject/app/admin/character.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          null,
+          0,
+          null,
+          null,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          null,
+          null
+        ]
+      },
+      "/home/abdullah/Desktop/TestProject/app/models/character.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          0,
+          null,
+          null,
+          1,
+          0,
+          null,
+          null,
+          1,
+          1,
+          null
+        ]
+      },
+      "/home/abdullah/Desktop/TestProject/app/models/application_record.rb": {
+        "lines": [
+          1,
+          1,
+          null
+        ]
+      },
+      "/home/abdullah/Desktop/TestProject/app/admin/contact.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          0,
+          0,
+          0,
+          null,
+          0,
+          null,
+          null,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          null,
+          null
+        ]
+      },
+      "/home/abdullah/Desktop/TestProject/app/models/contact.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          0,
+          null,
+          null
+        ]
+      },
+      "/home/abdullah/Desktop/TestProject/app/admin/dashboard.rb": {
+        "lines": [
+          null,
+          1,
+          1,
+          null,
+          1,
+          0,
+          0,
+          0,
+          0,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      },
+      "/home/abdullah/Desktop/TestProject/app/admin/user.rb": {
+        "lines": [
+          1,
+          1,
+          null,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          null,
+          0,
+          null,
+          null,
+          null,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          null,
+          null,
+          null
+        ]
+      },
+      "/home/abdullah/Desktop/TestProject/app/models/user.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          0,
+          null,
+          1,
+          0,
+          null,
+          1,
+          null,
+          null
+        ]
+      },
+      "/home/abdullah/Desktop/TestProject/app/admin/user_comment.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          null,
+          0,
+          null,
+          null,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          null,
+          null
+        ]
+      },
+      "/home/abdullah/Desktop/TestProject/app/models/user_comment.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          1,
+          0,
+          null,
+          null
+        ]
+      },
+      "/home/abdullah/Desktop/TestProject/app/controllers/user_comments_controller.rb": {
+        "lines": [
+          1,
+          1,
+          null,
+          1,
+          0,
+          null,
+          1,
+          0,
+          0,
+          null,
+          null,
+          1,
+          0,
+          0,
+          0,
+          null,
+          0,
+          0,
+          null,
+          0,
+          null,
+          null,
+          null,
+          1,
+          0,
+          0,
+          null,
+          null,
+          1,
+          0,
+          0,
+          null,
+          0,
+          0,
+          0,
+          null,
+          0,
+          null,
+          null,
+          null,
+          null,
+          null,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          null,
+          null,
+          null,
+          1,
+          null,
+          1,
+          0,
+          null,
+          null
+        ]
+      },
+      "/home/abdullah/Desktop/TestProject/app/channels/application_cable/channel.rb": {
+        "lines": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "branches": {
+        }
+      },
+      "/home/abdullah/Desktop/TestProject/app/channels/application_cable/connection.rb": {
+        "lines": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "branches": {
+        }
+      },
+      "/home/abdullah/Desktop/TestProject/app/controllers/characters_controller.rb": {
+        "lines": [
+          0,
+          null,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          null,
+          0,
+          0,
+          0,
+          null,
+          0,
+          0,
+          0,
+          0,
+          null,
+          0
+        ],
+        "branches": {
+        }
+      },
+      "/home/abdullah/Desktop/TestProject/app/controllers/contacts_controller.rb": {
+        "lines": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          null,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "branches": {
+        }
+      },
+      "/home/abdullah/Desktop/TestProject/app/controllers/users/confirmations_controller.rb": {
+        "lines": [
+          null,
+          null,
+          0,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          0
+        ],
+        "branches": {
+        }
+      },
+      "/home/abdullah/Desktop/TestProject/app/controllers/users/omniauth_callbacks_controller.rb": {
+        "lines": [
+          null,
+          null,
+          0,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          0
+        ],
+        "branches": {
+        }
+      },
+      "/home/abdullah/Desktop/TestProject/app/controllers/users/passwords_controller.rb": {
+        "lines": [
+          null,
+          null,
+          0,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          0
+        ],
+        "branches": {
+        }
+      },
+      "/home/abdullah/Desktop/TestProject/app/controllers/users/registrations_controller.rb": {
+        "lines": [
+          null,
+          null,
+          0,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          0,
+          0,
+          0,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          0
+        ],
+        "branches": {
+        }
+      },
+      "/home/abdullah/Desktop/TestProject/app/controllers/users/sessions_controller.rb": {
+        "lines": [
+          null,
+          null,
+          0,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          0,
+          null,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          null,
+          null,
+          null,
+          null,
+          null,
+          0
+        ],
+        "branches": {
+        }
+      },
+      "/home/abdullah/Desktop/TestProject/app/controllers/users/unlocks_controller.rb": {
+        "lines": [
+          null,
+          null,
+          0,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          0
+        ],
+        "branches": {
+        }
+      },
+      "/home/abdullah/Desktop/TestProject/app/models/ability.rb": {
+        "lines": [
+          0,
+          0,
+          null,
+          0,
+          0,
+          null,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "branches": {
+        }
+      },
+      "/home/abdullah/Desktop/TestProject/app/services/get_api_data.rb": {
+        "lines": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "branches": {
+        }
+      }
+    },
+    "timestamp": 1691665343
+  }
+}

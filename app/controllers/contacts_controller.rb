@@ -1,4 +1,5 @@
 class ContactsController < ApplicationController
+  before_action :authenticate_user!, only: [:new, :create]
   def new
     @contact = Contact.new
   end
@@ -7,9 +8,10 @@ class ContactsController < ApplicationController
     if @contact.save
       redirect_to root_path
     else
-      render :new
+      render :new, status: :unprocessable_entity
     end
   end
+
   private
   def contact_params
     params.require(:contact).permit(:question)

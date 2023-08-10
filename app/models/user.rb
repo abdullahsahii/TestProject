@@ -1,4 +1,5 @@
 class User < ApplicationRecord
+  validates :email, uniqueness: true
   enum role: { user: 0, admin: 1 }
   has_many :characters
   has_many :user_comments
@@ -9,5 +10,5 @@ class User < ApplicationRecord
     ["characters", "user_comments", "rating"]
   end
   devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :validatable
+         :recoverable, :rememberable, :validatable, :confirmable
 end
