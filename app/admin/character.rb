@@ -12,7 +12,7 @@ ActiveAdmin.register Character do
       f.input :location_url
       f.input :image
       f.input :created
-      f.input :user_id
+      f.input :user_id, as: :select, collection: User.all.map { |u| [u.email, u.id] }
     end
     f.actions
   end

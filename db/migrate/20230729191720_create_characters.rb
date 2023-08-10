@@ -4,7 +4,7 @@ class CreateCharacters < ActiveRecord::Migration[6.1]
       t.string :name
       t.boolean :status
       t.string :species
-      t.string :type
+      t.string :typee
       t.string :gender
       t.string :origin_name
       t.string :origin_url

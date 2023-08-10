@@ -1,9 +1,10 @@
 Rails.application.routes.draw do
-  ActiveAdmin::Devise.config
-  ActiveAdmin.routes(self)
+  constraints(RoleConstraint.new('admin')) do
+    ActiveAdmin.routes(self)
+  end
   root "characters#index"
-  resources :characters do
-    resources :user_comments
+  resources :characters, only: [:index, :show] do
+    resources :user_comments, only: [:new, :create, :edit, :update, :destroy]
     collection do
       get 'search', to: 'characters#search'
     end
@@ -15,6 +16,5 @@ Rails.application.routes.draw do
     confirmations: 'users/confirmations'
 
   }
-  resources :contacts
-
+  resources :contacts, only: [:new, :create, :show]
 end

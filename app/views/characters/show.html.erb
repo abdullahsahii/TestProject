@@ -15,7 +15,7 @@
       <h2>Comments</h2>
       <div class="comments">
         <% @character.user_comments.each do |comment| %>
-          <div class="comment mb-4 p-3 border rounded">
+          <div class="comment mb-4 p-3 border rounded" id=<%= "comment_#{comment.id}" %>>
             <p>
               <strong>Person Name:</strong>
               <%= comment.person_name %>
@@ -26,7 +26,12 @@
               <%= comment.comment %>
             </p>
             <% if current_user && comment.user == current_user %>
-              <%= link_to 'Destroy', character_user_comment_path(@character, comment), method: :delete, data: { confirm: 'Are you sure you want to delete this comment?' }, class: 'btn btn-outline-danger btn-sm rounded-pill' %>
+              <div>
+                <%= link_to 'Edit', edit_character_user_comment_path(@character, comment), class: 'btn btn-outline-primary btn-sm rounded-pill' %>
+
+                <%= link_to 'Destroy', character_user_comment_path(@character, comment), method: :delete, data: { confirm: 'Are you sure you want to delete this comment?' }, class: 'btn btn-outline-danger btn-sm rounded-pill', remote: true %>
+              </div>
+
             <% end %>
           </div>
         <% end %>

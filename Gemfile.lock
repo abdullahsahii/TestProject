@@ -107,10 +107,18 @@ GEM
       responders
       warden (~> 1.2.3)
     diff-lcs (1.5.0)
+    docile (1.4.0)
     erubi (1.12.0)
     et-orbi (1.2.7)
       tzinfo
     execjs (2.8.1)
+    factory_bot (6.2.1)
+      activesupport (>= 5.0.0)
+    factory_bot_rails (6.2.0)
+      factory_bot (~> 6.2.0)
+      railties (>= 5.0.0)
+    faker (3.2.0)
+      i18n (>= 1.8.11, < 2)
     ffi (1.15.5)
     formtastic (4.0.0)
       actionpack (>= 5.2.0)
@@ -220,6 +228,10 @@ GEM
       bundler (>= 1.15.0)
       railties (= 6.1.7.4)
       sprockets-rails (>= 2.0.0)
+    rails-controller-testing (1.0.5)
+      actionpack (>= 5.0.1.rc1)
+      actionview (>= 5.0.1.rc1)
+      activesupport (>= 5.0.1.rc1)
     rails-dom-testing (2.1.1)
       activesupport (>= 5.0.0)
       minitest
@@ -227,7 +239,6 @@ GEM
     rails-html-sanitizer (1.6.0)
       loofah (~> 2.21)
       nokogiri (~> 1.14)
-    rails_refactor (1.4.6)
     railties (6.1.7.4)
       actionpack (= 6.1.7.4)
       activesupport (= 6.1.7.4)
@@ -299,6 +310,12 @@ GEM
       rufus-scheduler (~> 3.2)
       sidekiq (>= 6, < 8)
       tilt (>= 1.4.0)
+    simplecov (0.22.0)
+      docile (~> 1.1)
+      simplecov-html (~> 0.11)
+      simplecov_json_formatter (~> 0.1)
+    simplecov-html (0.12.3)
+    simplecov_json_formatter (0.1.4)
     spring (4.1.1)
     sprockets (4.2.0)
       concurrent-ruby (~> 1.0)
@@ -351,9 +368,12 @@ DEPENDENCIES
   byebug
   cancancan (~> 3.5)
   capybara (>= 3.26)
-  devise
+  devise (~> 4.9)
+  factory_bot_rails
+  faker
   httparty
   jbuilder (~> 2.7)
+  jquery-rails
   kaminari
   letter_opener
   listen (~> 3.3)
@@ -361,7 +381,7 @@ DEPENDENCIES
   puma (~> 5.0)
   rack-mini-profiler (~> 2.0)
   rails (~> 6.1.7, >= 6.1.7.4)
-  rails_refactor (~> 1.4, >= 1.4.6)
+  rails-controller-testing
   redis (~> 4.0)
   rspec
   rspec-rails
@@ -369,6 +389,7 @@ DEPENDENCIES
   selenium-webdriver (>= 4.0.0.rc1)
   sidekiq
   sidekiq-scheduler
+  simplecov
   spring
   sqlite3 (~> 1.4)
   turbolinks (~> 5)

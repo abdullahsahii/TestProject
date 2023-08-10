@@ -26,7 +26,7 @@ ActiveRecord::Schema.define(version: 2023_08_04_142940) do
     t.string "created"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.integer "user_id", null: false
+    t.integer "user_id"
     t.index ["user_id"], name: "index_characters_on_user_id"
   end
 
