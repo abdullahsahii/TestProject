@@ -5,6 +5,8 @@ ruby '3.2.2'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails', branch: 'main'
 gem 'rails', '~> 6.1.7', '>= 6.1.7.4'
+gem 'haml', '~> 6.1', '>= 6.1.1'
+gem 'select2-rails', '~> 4.0', '>= 4.0.13'
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3', '~> 1.4'
 gem 'sidekiq'
@@ -75,3 +77,5 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+
+gem "hotwire-rails", "~> 0.1.3"

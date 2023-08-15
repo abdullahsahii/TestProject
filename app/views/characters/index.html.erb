@@ -1,14 +1,22 @@
 <div class="container mt-4">
   <div class="row">
-    <div class="col-md-8 offset-md-2">
-      <ul class="list-group">
-        <% @characters.each do |character| %>
-          <li class="list-group-item d-flex align-items-center" style="background-color: #e9ecef;">
-            <img src="<%= character.image %>" alt="<%= character.name %>" class="img-thumbnail" style="width: 60px; height: 60px; object-fit: cover; margin-right: 10px;">
-            <h4><%= link_to character.name, character, class: "text-dark text-decoration-none" %></h4>
-          </li>
-        <% end %>
-      </ul>
+    <div class="col">
+      <% @characters.each_slice(4) do |character_group| %>
+        <div class="row mb-4">
+          <% character_group.each do |character| %>
+            <div class="col-md-3">
+              <a href="<%= character_path(character) %>" class="card-link">
+                <div class="card">
+                  <img src="<%= character.image %>" alt="<%= character.name %>" class="card-img-top" style="object-fit: cover;">
+                  <div class="card-body">
+                    <h5 class="card-title"><%= character.name %></h5>
+                  </div>
+                </div>
+              </a>
+            </div>
+          <% end %>
+        </div>
+      <% end %>
 
       <nav class="mt-4">
         <%= paginate @characters, outer_window: 2, inner_window: 2, params: { controller: 'characters', action: 'index' }, class: "pagination justify-content-center" %>
@@ -16,3 +24,6 @@
     </div>
   </div>
 </div>
+
+
+

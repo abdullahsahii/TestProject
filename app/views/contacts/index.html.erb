@@ -1,0 +1,12 @@
+<div class="col-md-12">
+  <ul>
+    <% @contacts.each do |contact| %>
+      <li>
+        <h4><%= link_to contact.question, contact %></h4>
+      </li>
+    <% end %>
+  </ul>
+</div>
+
+<%= link_to "Ask Question", new_contact_path %>
+

@@ -8,6 +8,7 @@
       end
     end
 
+
     def show
       @character = Character.find(params[:id])
     end
@@ -15,6 +16,7 @@
     def search
       @query = params[:q]
       @characters = Character.where('name LIKE ?', "%#{@query}%")
+      render layout: false
     end
 
   end

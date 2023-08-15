@@ -128,9 +128,17 @@ GEM
       raabro (~> 1.4)
     globalid (1.1.0)
       activesupport (>= 5.0)
+    haml (6.1.1)
+      temple (>= 0.8.2)
+      thor
+      tilt
     has_scope (0.8.1)
       actionpack (>= 5.2)
       activesupport (>= 5.2)
+    hotwire-rails (0.1.3)
+      rails (>= 6.0.0)
+      stimulus-rails
+      turbo-rails
     httparty (0.21.0)
       mini_mime (>= 1.0.0)
       multi_xml (>= 0.5.2)
@@ -296,6 +304,7 @@ GEM
       sprockets (> 3.0)
       sprockets-rails
       tilt
+    select2-rails (4.0.13)
     selenium-webdriver (4.9.0)
       rexml (~> 3.2, >= 3.2.5)
       rubyzip (>= 1.2.2, < 3.0)
@@ -326,9 +335,16 @@ GEM
       sprockets (>= 3.0.0)
     sqlite3 (1.6.3)
       mini_portile2 (~> 2.8.0)
+    stimulus-rails (1.2.2)
+      railties (>= 6.0.0)
+    temple (0.10.2)
     thor (1.2.2)
     tilt (2.2.0)
     timeout (0.4.0)
+    turbo-rails (1.4.0)
+      actionpack (>= 6.0.0)
+      activejob (>= 6.0.0)
+      railties (>= 6.0.0)
     turbolinks (5.2.1)
       turbolinks-source (~> 5.2)
     turbolinks-source (5.2.0)
@@ -371,6 +387,8 @@ DEPENDENCIES
   devise (~> 4.9)
   factory_bot_rails
   faker
+  haml (~> 6.1, >= 6.1.1)
+  hotwire-rails (~> 0.1.3)
   httparty
   jbuilder (~> 2.7)
   jquery-rails
@@ -386,6 +404,7 @@ DEPENDENCIES
   rspec
   rspec-rails
   sass-rails (>= 6)
+  select2-rails (~> 4.0, >= 4.0.13)
   selenium-webdriver (>= 4.0.0.rc1)
   sidekiq
   sidekiq-scheduler
