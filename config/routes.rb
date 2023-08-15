@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+
   constraints(RoleConstraint.new('admin')) do
     ActiveAdmin.routes(self)
   end
@@ -6,7 +7,7 @@ Rails.application.routes.draw do
   resources :characters, only: [:index, :show] do
     resources :user_comments, only: [:new, :create, :edit, :update, :destroy]
     collection do
-      get 'search', to: 'characters#search'
+      get 'search', to: "characters#search"
     end
   end
 
@@ -16,5 +17,5 @@ Rails.application.routes.draw do
     confirmations: 'users/confirmations'
 
   }
-  resources :contacts, only: [:new, :create, :show]
+  resources :contacts, only: [:new, :create, :show, :index]
 end

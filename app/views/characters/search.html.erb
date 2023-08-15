@@ -1,11 +1,30 @@
-<h1>Search Results for "<%= @query %>"</h1>
-
-<% if @characters.any? %>
-  <ul>
-    <% @characters.each do |character| %>
-      <li><%= link_to character.name, character_path(character) %></li>
+<div class="dropdown">
+  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+    Search Results for "<%= @query %>"
+  </button>
+  <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+    <% if @characters.any? %>
+      <% @characters.each_slice(4) do |character_group| %>
+        <li>
+          <div class="container">
+            <% character_group.each do |character| %>
+              <div class="row mb-2">
+                <div class="col-12">
+                  <a href="<%= character_path(character) %>" class="dropdown-item">
+                    <div class="card">
+                      <div class="card-body">
+                        <h5 class="card-title"><%= character.name %></h5>
+                      </div>
+                    </div>
+                  </a>
+                </div>
+              </div>
+            <% end %>
+          </div>
+        </li>
+      <% end %>
+    <% else %>
+      <li><p class="dropdown-item">No results found.</p></li>
     <% end %>
   </ul>
-<% else %>
-  <p>No results found.</p>
-<% end %>
+</div>
