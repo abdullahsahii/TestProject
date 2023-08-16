@@ -43,27 +43,26 @@
 <div style="background-color: #f5f5f5;">
   <p class="notice"><%= notice %></p>
   <p class="alert"><%= alert %></p>
-  <div id="searchresult"></div>
   <%= yield %>
 </div>
 
 </body>
 </html>
-<script >
+<script>
     $(document).ready(function() {
         $('#live_search').on('input', function() {
             var input = $(this).val();
-            if (input != "") {
+            if (input !== "") {
                 $.ajax({
                     url: "/characters/search",
                     method: "get",
                     data: { q: input },
                     success: function(data) {
-                        $("#searchresult").html(data);
+                        $("#index_content").html(data);
                     }
                 });
             } else {
-                $("#searchresult").empty();
+                $("#index_content");
             }
         });
     });
