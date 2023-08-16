@@ -1,29 +1,25 @@
 <div class="container mt-4">
   <div class="row">
-    <div class="col">
-      <% @characters.each_slice(4) do |character_group| %>
-        <div class="row mb-4">
-          <% character_group.each do |character| %>
-            <div class="col-md-3">
-              <a href="<%= character_path(character) %>" class="card-link">
-                <div class="card">
-                  <img src="<%= character.image %>" alt="<%= character.name %>" class="card-img-top" style="object-fit: cover;">
-                  <div class="card-body">
-                    <h5 class="card-title"><%= character.name %></h5>
+    <div class="col" id="index_content">
+        <% @characters.each_slice(4) do |character_group| %>
+          <div class="row mb-4">
+            <% character_group.each do |character| %>
+              <div class="col-md-3">
+                <a href="<%= character_path(character) %>" class="card-link">
+                  <div class="card">
+                    <img src="<%= character.image %>" alt="<%= character.name %>" class="card-img-top" style="object-fit: cover;">
+                    <div class="card-body">
+                      <h5 class="card-title"><%= character.name %></h5>
+                    </div>
                   </div>
-                </div>
-              </a>
-            </div>
-          <% end %>
-        </div>
-      <% end %>
-
-      <nav class="mt-4">
-        <%= paginate @characters, outer_window: 2, inner_window: 2, params: { controller: 'characters', action: 'index' }, class: "pagination justify-content-center" %>
-      </nav>
+                </a>
+              </div>
+            <% end %>
+          </div>
+        <% end %>
+        <nav class="mt-4">
+          <%= paginate @characters, outer_window: 2, inner_window: 2, params: { controller: 'characters', action: 'index' }, class: "pagination justify-content-center" %>
+        </nav>
     </div>
   </div>
 </div>
-
-
-
