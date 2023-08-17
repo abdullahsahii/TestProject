@@ -16,3 +16,40 @@ Turbolinks.start()
 ActiveStorage.start()
 
 
+$(document).ready(function() {
+    $('#live_search').on('input', function() {
+        var input = $(this).val();
+        if (input !== "") {
+            $.ajax({
+                url: "/characters/search",
+                method: "get",
+                data: { q: input },
+                success: function(data) {
+                    $("#index_content").html(data);
+                }
+            });
+        } else {
+            $("#index_content");
+        }
+    });
+});
+
+
+
+$(document).ready(function() {
+    $('#livee_search').on('input', function() {
+        var input = $(this).val();
+        if (input !== "") {
+            $.ajax({
+                url: "/profiles/search",
+                method: "get",
+                data: { q: input },
+                success: function(data) {
+                    $("#index_content").html(data);
+                }
+            });
+        } else {
+            $("#index_content").html("");
+        }
+    });
+});

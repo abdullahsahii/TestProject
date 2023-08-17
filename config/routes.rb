@@ -17,5 +17,10 @@ Rails.application.routes.draw do
     confirmations: 'users/confirmations'
 
   }
+  resources :profiles do
+    collection do
+      get 'search', to: "profiles#search"
+    end
+  end
   resources :contacts, only: [:new, :create, :show, :index]
 end
