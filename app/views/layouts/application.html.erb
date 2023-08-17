@@ -40,6 +40,11 @@
     </div>
   </div>
 </nav>
+
+<div>
+  <input type="text" class="form-control" id="livee_search" autocomplete="off" placeholder="Search" name="q">
+</div>
+<div id="index_content"></div>
 <div style="background-color: #f5f5f5;">
   <p class="notice"><%= notice %></p>
   <p class="alert"><%= alert %></p>
@@ -48,22 +53,4 @@
 
 </body>
 </html>
-<script>
-    $(document).ready(function() {
-        $('#live_search').on('input', function() {
-            var input = $(this).val();
-            if (input !== "") {
-                $.ajax({
-                    url: "/characters/search",
-                    method: "get",
-                    data: { q: input },
-                    success: function(data) {
-                        $("#index_content").html(data);
-                    }
-                });
-            } else {
-                $("#index_content");
-            }
-        });
-    });
-</script>
+

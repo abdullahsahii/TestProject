@@ -7,6 +7,7 @@ ruby '3.2.2'
 gem 'rails', '~> 6.1.7', '>= 6.1.7.4'
 gem 'haml', '~> 6.1', '>= 6.1.1'
 gem 'select2-rails', '~> 4.0', '>= 4.0.13'
+gem 'acts-as-taggable-on', '~> 9.0', '>= 9.0.1'
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3', '~> 1.4'
 gem 'sidekiq'

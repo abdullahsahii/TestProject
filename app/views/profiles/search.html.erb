@@ -1,0 +1,22 @@
+<div class="index_content">
+  <table class="table">
+    <thead>
+    <tr>
+      <th scope="col">User name</th>
+      <th scope="col">Email</th>
+      <th scope="col">Skills</th>
+    </tr>
+    </thead>
+    <tbody>
+    <% @users.each do |user| %>
+      <tr>
+        <td><%= user.name %></td>
+        <td><%= user.email %></td>
+        <td><%= user.skill_list %></td>
+      </tr>
+    <% end %>
+    </tbody>
+  </table>
+
+</div>
+
