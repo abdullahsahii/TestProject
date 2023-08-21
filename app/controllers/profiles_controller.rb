@@ -16,7 +16,7 @@ class ProfilesController < ApplicationController
   end
   def search
     @query = params[:q]
-    @users = User.tagged_with(@query, on: :skills)
+    @users = User.tagged_with(@query, on: :skills) & User.tagged_with(@query, on: :experiences)
     render layout: false
   end
 

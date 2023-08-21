@@ -22,5 +22,6 @@ Rails.application.routes.draw do
       get 'search', to: "profiles#search"
     end
   end
+  get 'search', to: "searches#search"
   resources :contacts, only: [:new, :create, :show, :index]
 end

@@ -1,7 +1,4 @@
-
-<% if @selected_category == "Name"|| @selected_category == "Gender" %>
-<div id = "index_content">
-  <div class="container mt-4">
+<div class="container mt-4">
     <div class="row">
       <div class="col">
         <% @characters.each_slice(4) do |character_group| %>
@@ -22,29 +19,4 @@
         <% end %>
       </div>
     </div>
-  </div>
 </div>
-<% else %>
-  <div class="index_content">
-    <table class="table">
-      <thead>
-      <tr>
-        <th scope="col">User name</th>
-        <th scope="col">Email</th>
-        <th scope="col">Skills</th>
-        <th scope="col">Experience</th>
-      </tr>
-      </thead>
-      <tbody>
-      <% @users.each do |user| %>
-        <tr>
-          <td><%= user.name %></td>
-          <td><%= user.email %></td>
-          <td><%= user.skill_list %></td>
-          <td><%= user.experience_list %></td>
-        </tr>
-      <% end %>
-      </tbody>
-    </table>
-  </div>
-<% end %>
