@@ -1,6 +1,8 @@
 class CharactersController < ApplicationController
 
   def index
+    # dataa = GetApiData.new()
+    # dataa.get_data(current_user)
     if user_signed_in?
       @characters = current_user.characters.page(params[:page])
     else
@@ -10,7 +12,6 @@ class CharactersController < ApplicationController
 
   def show
     @character = Character.find(params[:id])
-
   end
 
   def search
@@ -30,9 +31,4 @@ class CharactersController < ApplicationController
     
     render layout: false
   end
-
-  #
-  # @query = params[:q]
-  # @characters = Character.where('name LIKE ?', "%#{@query}%")
-
 end

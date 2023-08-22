@@ -1,6 +1,6 @@
-require 'httparty'
+
 class GetApiData
-  def self.get_data(arge)
+  def get_data(arge)
     response = HTTParty.get('https://rickandmortyapi.com/api/character')
     characters_data = JSON.parse(response.body)
     characters_data["results"].each do |character_data|
