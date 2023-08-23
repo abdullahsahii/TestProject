@@ -2,17 +2,14 @@ class ContactsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create]
 
   def index
-    if user_signed_in?
-      @contacts = current_user.contacts
-    else
-      flash.now[:notice] = "You have not asked any question"
-    end
+    @contacts = current_user.contacts
   end
+
   def new
     @contact = Contact.new
   end
-  def create
 
+  def create
     @contact = current_user.contacts.new(contact_params)
     if @contact.save
       redirect_to contacts_path
@@ -26,6 +23,7 @@ class ContactsController < ApplicationController
   end
 
   private
+
   def contact_params
     params.require(:contact).permit(:question)
   end

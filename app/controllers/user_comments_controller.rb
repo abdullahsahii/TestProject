@@ -1,35 +1,40 @@
 class UserCommentsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create]
+  before_action :set_character, only: [:new, :update, :create, :destroy]
+  before_action :set_comment, only: [:update, :destroy]
 
-  def index
-    @comments = UserComment.all
-  end
   def new
-    @character = Character.find(params[:character_id])
     @comment = @character.user_comments.build
   end
 
   def create
-    @character = Character.find(params[:character_id])
     @comment = @character.user_comments.build(comment_params)
     @comment.user = current_user
 
     if @comment.save
       redirect_to character_path(@character), notice: 'Comment was successfully created.'
     else
-      render :new
+      render :new, status: :unprocessable_entity
     end
   end
 
   def edit
-    @character = Character.find(params[:character_id])
-    @comment = @character.user_comments.find(params[:id])
+    begin
+      @character = Character.find(params[:character_id])
+      @comment = @character.user_comments.find(params[:id])
+      if current_user.id == @comment.user_id
+
+      else
+        flash[:alert] = "You have not permission to edit the comment"
+        redirect_to '/422.html'
+      end
+    rescue
+      flash[:alert] = "You have not permission to edit the comment"
+      redirect_to '/404.html'
+    end
   end
 
   def update
-    @character = Character.find(params[:character_id])
-    @comment = @character.user_comments.find(params[:id])
-
     if @comment.user == current_user
       if @comment.update(comment_params)
         redirect_to character_path(@character), notice: 'Comment was successfully updated.'
@@ -39,18 +44,23 @@ class UserCommentsController < ApplicationController
     end
   end
 
-
   def destroy
-    @character = Character.find(params[:character_id])
-    @comment = @character.user_comments.find(params[:id])
     @comment.destroy
     respond_to do |format|
-      format.html { redirect_to character_path(@character)}
+      format.html { redirect_to character_path(@character) }
       format.js
     end
   end
 
   private
+
+  def set_character
+    @character = Character.find(params[:character_id])
+  end
+
+  def set_comment
+    @comment = @character.user_comments.find(params[:id])
+  end
 
   def comment_params
     params.require(:user_comment).permit(:person_name, :comment, :rating)

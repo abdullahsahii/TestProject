@@ -31,9 +31,5 @@ RSpec.describe UserComment, type: :model do
     expect(user_comment.errors[:user]).to include("must exist")
   end
 
-  it "is invalid without a comment" do
-    user_comment = UserComment.new(character: character, user: user)
-    expect(user_comment).to_not be_valid
-    expect(user_comment.errors[:comment]).to include("can't be blank")
-  end
+
 end

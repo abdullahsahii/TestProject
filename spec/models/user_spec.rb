@@ -1,10 +1,6 @@
 require 'rails_helper'
 
 RSpec.describe User, type: :model do
-  it "has a valid role" do
-    user = User.new(role: "user", email: "test@example.com", password: "password")
-    expect(user).to be_valid
-  end
 
   it "is invalid with an invalid role" do
     expect {

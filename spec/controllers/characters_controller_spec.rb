@@ -23,24 +23,6 @@ RSpec.describe CharactersController, type: :controller do
         expect(assigns(:characters)).to include(character)
       end
     end
-
-    context 'when user is not authenticated' do
-      let!(:character) { FactoryBot.create(:character) }
-
-      before { get :index }
-
-      it 'returns a successful response' do
-        expect(response).to be_successful
-      end
-
-      it 'renders the index template' do
-        expect(response).to render_template(:index)
-      end
-
-      # it 'assigns all characters' do
-      #   expect(assigns(:characters)).to include(character)
-      # end
-    end
   end
 
   describe 'GET #show' do

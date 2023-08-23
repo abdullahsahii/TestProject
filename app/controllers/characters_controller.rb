@@ -3,6 +3,8 @@ class CharactersController < ApplicationController
   def index
     # dataa = GetApiData.new()
     # dataa.get_data(current_user)
+    GetApiData.get_data
+
     if user_signed_in?
       @characters = current_user.characters.page(params[:page])
     else
@@ -11,7 +13,12 @@ class CharactersController < ApplicationController
   end
 
   def show
-    @character = Character.find(params[:id])
+    begin
+      @character = Character.find(params[:id])
+    rescue ActiveRecord::RecordNotFound
+      flash[:alert] = "Character not found"
+      redirect_to '/404.html'
+    end
   end
 
   def search
@@ -28,7 +35,11 @@ class CharactersController < ApplicationController
     elsif @selected_category = "Skills&Experience"
       @users = User.tagged_with(@query, on: :skills) & User.tagged_with(@query, on: :experiences)
     end
-    
+
     render layout: false
   end
 end
+
+
+
+
