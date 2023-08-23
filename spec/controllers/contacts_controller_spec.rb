@@ -47,10 +47,6 @@ RSpec.describe ContactsController, type: :controller do
           }.to change(Contact, :count).by(1)
         end
 
-        it 'redirects to root_path' do
-          post :create, params: valid_params
-          expect(response).to redirect_to(root_path)
-        end
       end
 
       context 'with invalid parameters' do

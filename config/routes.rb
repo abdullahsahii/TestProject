@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   constraints(RoleConstraint.new('admin')) do
     ActiveAdmin.routes(self)
   end
+
   root "characters#index"
   resources :characters, only: [:index, :show] do
     resources :user_comments, only: [:new, :create, :edit, :update, :destroy]
@@ -11,6 +12,7 @@ Rails.application.routes.draw do
     end
   end
 
+
   devise_for :users, controllers: {
     registrations: 'users/registrations',
     sessions: 'users/sessions',
@@ -18,10 +20,8 @@ Rails.application.routes.draw do
 
   }
   resources :profiles do
-    collection do
-      get 'search', to: "profiles#search"
-    end
+
   end
-  get 'search', to: "searches#search"
+
   resources :contacts, only: [:new, :create, :show, :index]
 end

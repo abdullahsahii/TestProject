@@ -16,7 +16,7 @@ ActiveRecord::Schema.define(version: 2023_08_17_081509) do
     t.string "name"
     t.boolean "status"
     t.string "species"
-    t.string "type"
+    t.string "typee"
     t.string "gender"
     t.string "origin_name"
     t.string "origin_url"
