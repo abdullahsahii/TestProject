@@ -28,9 +28,10 @@ class UserCommentsController < ApplicationController
         flash[:alert] = "You have not permission to edit the comment"
         redirect_to '/422.html'
       end
-    rescue
+    rescue ActiveRecord::RecordNotFound
       flash[:alert] = "You have not permission to edit the comment"
       redirect_to '/404.html'
+
     end
   end
 

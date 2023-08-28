@@ -34,13 +34,19 @@
       </ul>
     </div>
     <div>
-    <%= form_tag(search_characters_path, method: "get", id: "live_search_form") do %>
-      <div class = "input-group rounded">
-      <%= select_tag :category, options_for_select(["Name", "Gender", "Skills", "Experience", "Skills&Experience"]), id: "select_category", class: "form-control rounded" %>
-      <input type="text" class="form-control rounded" id="live_search" autocomplete="off" placeholder="Search" name="q">
-      </div>
-    <% end %>
-    </div>  
+      <%#= form_tag(search_characters_path, method: "get", id: "live_search_form") do %>
+<!--        <div class="input-group rounded">-->
+          <%#= select_tag :category, options_for_select(["Name", "Gender", "Skills", "Experience", "Skills&Experience"]), id: "select_category", class: "form-control rounded" %>
+<!--          <input type="text" class="form-control rounded" id="live_search" autocomplete="off" placeholder="Search" name="q">-->
+<!--          <div class="input-group-append">-->
+<!--            <button type="button" id="buton" class="btn btn-success rounded ml-2" id="add_button">+</button>-->
+<!--          </div>-->
+<!--          <button type="submit" class="btn btn-primary rounded" id="search_button">Search</button>-->
+<!--        </div>-->
+      <%# end %>
+
+
+    </div>
   </div>
 </nav>
 <div style="background-color: #f5f5f5;">
@@ -51,22 +57,35 @@
 
 </body>
 </html>
-<script>
-document.getElementById("live_search").onkeyup = function() {myFunction()};
-function myFunction() {
-  var input = document.getElementById("live_search").value;
-  var category = document.getElementById("select_category").value;
-  if (input !== "") {
-    $.ajax({
-      url: "/characters/search",
-      method: "get",
-      data: { q: input, category: category },
-      success: function(data) {
-        $("#index_content").html(data); 
-      }
-    });
-  } else {
-    $("#index_content"); 
-  }
-}
-</script>
+<!--<script>-->
+<!--    document.getElementById("live_search").onkeyup = function () {-->
+<!--        myFunction()-->
+<!--    };-->
+
+<!--    function myFunction() {-->
+<!--        var input = document.getElementById("live_search").value;-->
+<!--        var category = document.getElementById("select_category").value;-->
+<!--        if (input !== "") {-->
+<!--            $.ajax({-->
+<!--                url: "/characters/search",-->
+<!--                method: "get",-->
+<!--                data: {q: input, category: category},-->
+<!--                success: function (data) {-->
+<!--                    $("#index_content").html(data);-->
+<!--                }-->
+<!--            });-->
+<!--        } else {-->
+<!--            $("#index_content");-->
+<!--        }-->
+<!--    }-->
+<!--</script>-->
+
+
+<!--<script>-->
+<!--    $(document).ready(function () {-->
+<!--        $('#buton').onclick(function () {-->
+<!--            document. getElementById("search").innerText +=  "data" ;-->
+<!--        })-->
+<!--    }-->
+<!--    )-->
+<!--</script>-->
