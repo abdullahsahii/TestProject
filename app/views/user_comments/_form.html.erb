@@ -1,4 +1,4 @@
-<%= form_with(model: [@character, @comment]) do |form| %>
+<%= form_with(model: [@character, @comment], remote: true) do |form| %>
   <p><strong>Current User:</strong> <%= current_user.name %></p>
   <%= form.hidden_field :person_name, value: current_user.name %>
 

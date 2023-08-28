@@ -21,23 +21,25 @@ class CharactersController < ApplicationController
     end
   end
 
-  def search
-    @selected_category = params[:category]
-    @query = params[:q]
-    if @selected_category == "Name"
-      @characters = Character.where('name LIKE ?', "%#{@query}%")
-    elsif @selected_category == "Gender"
-      @characters = Character.where('gender LIKE ?', "#{@query}")
-    elsif @selected_category == "Skills"
-      @users = User.tagged_with(@query, on: :skills)
-    elsif @selected_category == "Experience"
-      @users = User.tagged_with(@query, on: :experiences)
-    elsif @selected_category = "Skills&Experience"
-      @users = User.tagged_with(@query, on: :skills) & User.tagged_with(@query, on: :experiences)
-    end
+    def search
+      binding.pry
 
-    render layout: false
-  end
+      @selected_category = params[:category]
+      @query = params[:q]
+      if @selected_category == "Name"
+        @characters = Character.where('name LIKE ?', "%#{@query}%")
+      elsif @selected_category == "Gender"
+        @characters = Character.where('gender LIKE ?', "#{@query}")
+      elsif @selected_category == "Skills"
+        @users = User.tagged_with(@query, on: :skills)
+      elsif @selected_category == "Experience"
+        @users = User.tagged_with(@query, on: :experiences)
+      elsif @selected_category = "Skills&Experience"
+        @users = User.tagged_with(@query, on: :skills) & User.tagged_with(@query, on: :experiences)
+      end
+
+      render layout: false
+    end
 end
 
 

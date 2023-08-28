@@ -12,6 +12,8 @@ Rails.application.routes.draw do
     end
   end
 
+  resources :searches
+
 
   devise_for :users, controllers: {
     registrations: 'users/registrations',
@@ -20,7 +22,6 @@ Rails.application.routes.draw do
 
   }
   resources :profiles do
-
   end
 
   resources :contacts, only: [:new, :create, :show, :index]

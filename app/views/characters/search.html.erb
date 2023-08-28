@@ -25,26 +25,26 @@
   </div>
 </div>
 <% else %>
-  <div class="index_content">
-    <table class="table">
-      <thead>
-      <tr>
-        <th scope="col">User name</th>
-        <th scope="col">Email</th>
-        <th scope="col">Skills</th>
-        <th scope="col">Experience</th>
-      </tr>
-      </thead>
-      <tbody>
-      <% @users.each do |user| %>
+    <div class="index_content">
+      <table class="table">
+        <thead>
         <tr>
-          <td><%= user.name %></td>
-          <td><%= user.email %></td>
-          <td><%= user.skill_list %></td>
-          <td><%= user.experience_list %></td>
+          <th scope="col">User name</th>
+          <th scope="col">Email</th>
+          <th scope="col">Skills</th>
+          <th scope="col">Experience</th>
         </tr>
-      <% end %>
-      </tbody>
-    </table>
-  </div>
+        </thead>
+        <tbody>
+        <% @users.each do |user| %>
+          <tr>
+            <td><%= user.name %></td>
+            <td><%= user.email %></td>
+            <td><%= user.skill_list %></td>
+            <td><%= user.experience_list %></td>
+          </tr>
+        <% end %>
+        </tbody>
+      </table>
+    </div>
 <% end %>

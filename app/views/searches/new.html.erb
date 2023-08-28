@@ -1,0 +1,49 @@
+<form id="live_search_form" action="<%= search_characters_path %>" method="get">
+  <div id="search_fields">
+    <div class="search-field" id="search">
+      <select id="select_category" class="form-control rounded category-select">
+        <option value="Name">Name</option>
+        <option value="Gender">Gender</option>
+        <option value="Skills">Skills</option>
+        <option value="Experience">Experience</option>
+        <option value="Skills&Experience">Skills&Experience</option>
+      </select>
+      <input type="text" class="form-control rounded live-search" id="live_search" autocomplete="off" placeholder="Search" name="character_search[q]">
+    </div>
+    <button type="button" class="btn btn-outline-secondary rounded plus-button" id="buton">Plus</button>
+  </div>
+  <button type="submit" id="buton" class="btn btn-primary rounded" id="submit_button">Search</button>
+</form>
+
+
+
+<script>
+    var categoryy = []
+    $(document).ready(function () {
+        $('#buton').click(function () {
+            // debugger;
+            var input = document.getElementById("live_search").value;
+            var category = document.getElementById("select_category").value;
+
+            console.log(category);
+            console.log(input);
+            categoryy.push(category);
+            var arrayy = ['Name', 'Gender', 'Skills', 'Experience', 'Skills&Experience'];
+            var array = arrayy.filter(item => !categoryy.includes(item));
+            console.log(array);
+            // debugger;
+
+            var newSearchField = `
+        <div class="search-field" id="search">
+          <select id="select_category" class="form-control rounded category-select">
+            ${array.map(e => `<option value="${e}">${e}</option>`).join('\n')}
+          </select>
+          <input type="text" class="form-control rounded livee-search" id="live_search" autocomplete="off" placeholder="Search" name="character_search[q]">
+        </div>`;
+
+
+            $('#buton').before(newSearchField);
+            console.log(categoryy)
+        });
+    });
+</script>
